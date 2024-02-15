@@ -11,10 +11,8 @@ model_path = '../models/bitcoin_price_model.pkl'
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
 
-@app.route('/')
-def home():
-    """Render the home page with the input form."""
-    return render_template('index.html')
+@app.route('/predict', methods=['POST'])
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
