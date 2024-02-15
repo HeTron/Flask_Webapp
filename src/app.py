@@ -3,11 +3,10 @@ import pickle
 import numpy as np
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 # Load your trained model
-base_dir = os.path.abspath(os.path.dirname(__file__))
-model_path = os.path.join(base_dir, '../../ML_Web_App_Flask/models/bitcoin_price_model.pkl')
+model_path = '../models/bitcoin_price_model.pkl'
 
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
