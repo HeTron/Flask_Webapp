@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load your trained model
-model_path = 'bitcoin_price_model.pkl'
+model_path = '../../ML_Web_App_Flask/models/bitcoin_price_model.pkl'
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Prediction</title>
+</head>
+<body>
+    <h2>Bitcoin Price Prediction Form</h2>
+    <form action="/predict" method="post">
+        <label for="open">Open:</label><br>
+        <input type="text" id="open" name="open" required><br>
+
+        <label for="high">High:</label><br>
+        <input type="text" id="high" name="high" required><br>
+
+        <label for="low">Low:</label><br>
+        <input type="text" id="low" name="low" required><br>
+
+        <label for="price_lag1">Price Lag 1:</label><br>
+        <input type="text" id="price_lag1" name="price_lag1" required><br>
+
+        <label for="price_7day_rolling_mean">Price 7-Day Rolling Mean:</label><br>
+        <input type="text" id="price_7day_rolling_mean" name="price_7day_rolling_mean" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
