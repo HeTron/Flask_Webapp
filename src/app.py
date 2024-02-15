@@ -11,8 +11,10 @@ model_path = '../models/bitcoin_price_model.pkl'
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
 
-@app.route('/predict', methods=['POST'])
-
+@app.route('/')
+def home():
+    """Render the home page with the input form."""
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -37,7 +39,7 @@ def predict():
         # Return the result
         return render_template('index.html', prediction_text=f'Predicted Bitcoin Price: ${prediction[0]:,.2f}')
     except Exception as e:
-        return jsonify({'error': str(e), 'message': 'Error processing the request'}), 500
+        return render_template('index.html', prediction_text=f'Error: {str(e)}')
 
 if __name__ == "__main__":
     app.run(debug=True)

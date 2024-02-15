@@ -25,5 +25,11 @@
 
         <input type="submit" value="Predict">
     </form>
+
+    {% if prediction_text %}
+        <div>
+            <p>{{ prediction_text }}</p>
+        </div>
+    {% endif %}
 </body>
 </html>
