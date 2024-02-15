@@ -29,9 +29,12 @@ def predict():
 
         # Prepare the feature array for prediction
         features = np.array([[open_price, high, low, price_lag1, price_7day_rolling_mean]])
+        print("Received form data:", open_price, high, low, price_lag1,
+              price_7day_rolling_mean)
 
         # Make prediction
         prediction = model.predict(features)
+        print(f"Prediction result: {prediction}")
 
         # Return the result
         return render_template('index.html', prediction_text=f'Predicted Bitcoin Price: ${prediction[0]:,.2f}')
